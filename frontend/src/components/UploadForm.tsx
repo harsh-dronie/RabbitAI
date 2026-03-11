@@ -38,7 +38,7 @@ export default function UploadForm() {
 
     try {
       // POST request to backend
-      const API_URL = 'https://rabbitt-ai-backend-1lu8.onrender.com'
+      const API_URL = 'https://rabbitt-ai-backend-t1u8.onrender.com'
       console.log('Using API URL:', API_URL) // Debug log
       const response = await axios.post(`${API_URL}/api/upload`, formData, {
         headers: {

@@ -17,7 +17,7 @@ app.use(helmet())
 // CORS configuration
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
   ? process.env.ALLOWED_ORIGINS.split(',') 
-  : ['http://localhost:3000', 'http://localhost:3002', 'https://rabbitt-ai-frontend-uopg.onrender.com']
+  : ['http://localhost:3000', 'http://localhost:3002', 'https://rabbitt-ai-frontend-upgq.onrender.com']
 
 console.log('Allowed CORS origins:', allowedOrigins) // Debug log
 

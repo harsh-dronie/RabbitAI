@@ -17,13 +17,19 @@ app.use(helmet())
 // CORS configuration
 const allowedOrigins = process.env.ALLOWED_ORIGINS 
   ? process.env.ALLOWED_ORIGINS.split(',') 
-  : ['http://localhost:3000', 'http://localhost:3002']
+  : ['http://localhost:3000', 'http://localhost:3002', 'https://rabbitt-ai-frontend-uopg.onrender.com']
+
+console.log('Allowed CORS origins:', allowedOrigins) // Debug log
 
 app.use(cors({
   origin: (origin, callback) => {
-    if (!origin || allowedOrigins.includes(origin)) {
+    // Allow requests with no origin (like mobile apps or curl requests)
+    if (!origin) return callback(null, true)
+    
+    if (allowedOrigins.includes(origin)) {
       callback(null, true)
     } else {
+      console.log('CORS blocked origin:', origin)
       callback(new Error('Not allowed by CORS'))
     }
   },

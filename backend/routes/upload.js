@@ -170,9 +170,10 @@ router.post('/upload', upload.single('file'), validateRequest, async (req, res, 
     
     if (!emailResult.success) {
       console.error(`❌ Failed to send email: ${emailResult.error}`)
-      return res.status(500).json({
-        success: false,
-        error: 'Failed to send email'
+      // Return success anyway since processing completed
+      return res.json({
+        success: true,
+        message: 'Sales summary generated successfully (email delivery failed - please check backend logs)'
       })
     }
     

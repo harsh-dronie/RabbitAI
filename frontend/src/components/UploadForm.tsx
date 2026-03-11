@@ -38,7 +38,7 @@ export default function UploadForm() {
 
     try {
       // POST request to backend
-      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'http://localhost:3001'
+      const API_URL = process.env.NEXT_PUBLIC_API_URL || 'https://rabbitt-ai-backend-1lu8.onrender.com'
       const response = await axios.post(`${API_URL}/api/upload`, formData, {
         headers: {
           'Content-Type': 'multipart/form-data',
